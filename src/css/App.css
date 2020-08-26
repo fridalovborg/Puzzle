@@ -1,0 +1,96 @@
+.puzzle {
+  align-items: center;
+  color: #3400FF;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100vh;
+  padding-top: 20px;
+  position: relative;
+  text-transform: uppercase;
+  width: 100%; }
+  .puzzle__board {
+    max-width: 500px;
+    width: 100%; }
+    @media screen and (min-width: 1024px) {
+      .puzzle__board {
+        width: 500px; } }
+  .puzzle__title {
+    font-size: 45px;
+    font-weight: 700;
+    margin: 20px;
+    text-align: center; }
+    @media screen and (min-width: 1024px) {
+      .puzzle__title {
+        font-size: 60px; } }
+  .puzzle__rows {
+    display: flex;
+    margin: 0 10px; }
+  .puzzle__tile {
+    background-color: #F3E2CF;
+    border-radius: 10px;
+    border: 2px solid #3400FF;
+    cursor: pointer;
+    font-size: 32px;
+    font-weight: 600;
+    margin: 3px;
+    position: relative;
+    width: 25%; }
+    @media screen and (min-width: 1024px) {
+      .puzzle__tile {
+        font-size: 40px; } }
+    .puzzle__tile:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%; }
+    .puzzle__tile--empty {
+      background-color: transparent;
+      border: 2px solid #fffaf5;
+      cursor: auto; }
+    .puzzle__tile--number {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%); }
+  .puzzle__shuffle {
+    background-color: transparent;
+    border-radius: 10px;
+    border: 2px solid #3400FF;
+    color: #3400FF;
+    display: block;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin: 20px auto;
+    padding: 10px;
+    text-transform: uppercase;
+    width: 200px; }
+    .puzzle__shuffle:hover {
+      background-color: #3400FF;
+      color: #F3E2CF; }
+  .puzzle__overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0; }
+  .puzzle__win {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 4px 4px 10px #999999;
+    width: 85%;
+    height: 300px;
+    font-weight: 600;
+    font-size: 17px;
+    background-color: #fffaf5; }
+    @media screen and (min-width: 1024px) {
+      .puzzle__win {
+        width: 350px;
+        height: 350px; } }
