@@ -1,0 +1,125 @@
+@import "./variables.scss";
+
+.puzzle {
+	align-items: center;
+	color: $blue;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+    min-height: 100vh;
+	padding-top: 20px;
+	position: relative;
+	text-transform: uppercase;
+	width: 100%;
+
+	&__board {
+		max-width: 500px;
+		width: 100%;
+
+		@media #{$ipadDesktop} {
+			width: 500px;
+		}
+	}
+
+	&__title {
+		font-size: 45px;
+		font-weight: 700;
+		margin: 20px;
+		text-align: center;
+
+		@media #{$ipadDesktop} {
+			font-size: 60px;
+		}
+	}
+
+	&__rows {
+		display: flex;
+		margin: 0 10px;
+	}
+
+	&__tile {
+		background-color: $beige;
+		border-radius: 10px;
+		border: 2px solid $blue;
+		cursor: pointer;
+		font-size: 32px;
+		font-weight: $demiBold;
+		margin: 3px;
+		position: relative;
+		width: 25%;
+
+		@media #{$ipadDesktop} {
+			font-size: 40px;
+		}
+
+		&:after {
+			content: "";
+			display: block;
+			padding-bottom: 100%;
+		}
+
+		&--empty {
+			background-color: transparent;
+			border: 2px solid $lightBeige;
+			cursor: auto;
+		}
+
+		&--number {
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__shuffle {
+		background-color: transparent;
+		border-radius: 10px;
+		border: 2px solid $blue;
+		color: $blue;
+		display: block;
+		font-family: $font-family;
+		font-size: 17px;
+		font-weight: $demiBold;
+		margin: 20px auto;
+		padding: 10px;
+		text-transform: uppercase;
+		width: 200px;
+	
+		&:hover {
+			background-color: $blue;
+			color: $beige;
+		}
+	}
+
+	&__overlay {
+		background-color: rgba(000, 000, 000, 0.6);
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+	}
+
+	&__win {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+		box-shadow: 4px 4px 10px #999999;
+		width: 85%;
+		height: 300px;
+		font-weight: $demiBold;
+		font-size: 17px;
+		background-color: $lightBeige;
+
+		@media #{$ipadDesktop} {
+			width: 350px;
+			height: 350px;
+		}
+	}
+}
